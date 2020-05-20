@@ -1,14 +1,13 @@
-print("enter number")
-number = input()
-
-
 def collatz(number):
-    mod = int(number) % 2
-    if mod == 0:
-        newone = int(number) // 2
-        print(str(newone))
-    else:
-        newtwo = 3 * int(number) + 1
-        print(str(newtwo))
+    if number % 2 == 0:
+        print(number // 2)
+        return number // 2
 
-collatz(number)
+    elif number % 2 == 1:
+        result = 3 * number + 1
+        print(result)
+        return result
+
+n = input("Give me a number: ")
+while n != 1:
+    n = collatz(int(n))
